@@ -27,25 +27,28 @@ function HomePage() {
   return (
     <>
       <Head>
-        <title>Next.js + Contentful</title>
-        <link
-          rel="stylesheet"
-          href="https://css.zeit.sh/v1.css"
-          type="text/css"
-        />
+        <title>Next.js + Covid</title>
       </Head>
-      {posts.length > 0
-        ? posts.map((p) => (
-            <Post
-              alt={p.fields.alt}
-              date={p.fields.date}
-              key={p.fields.title}
-              image={p.fields.image}
-              title={p.fields.title}
-              url={p.fields.url}
-            />
-          ))
-        : null}
+      <div
+        style={{
+          padding: 24,
+        }}>
+        {posts.length > 0
+          ? posts.map((p) => {
+              console.log(p);
+              return (
+                <Post
+                  date={p.fields.date}
+                  key={p.sys.id}
+                  id={p.sys.id}
+                  fullname={p.fields.fullName}
+                  address={p.fields.address}
+                  status={p.fields.covidStatusFlag}
+                />
+              );
+            })
+          : null}
+      </div>
     </>
   );
 }
