@@ -1,4 +1,4 @@
-import client from './services/client';
+import client from '../services/client';
 import Header from '../components/Header';
 import '../styles/globals.css';
 
