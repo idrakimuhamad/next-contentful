@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 import * as contentful from 'contentful';
 import QRious from 'qrious';
 
-import Post from '../../components/post';
 import { isRouterReady } from '../../utils';
 
 const client = contentful.createClient({

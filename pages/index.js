@@ -1,15 +1,11 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Post from '../components/post';
+import Header from '../components/Header';
 
-const client = require('contentful').createClient({
-  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
-  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
-});
-
-function HomePage() {
+function HomePage({ apiClient }) {
   async function fetchEntries() {
-    const entries = await client.getEntries();
+    const entries = await apiClient.getEntries();
     if (entries.items) return entries.items;
     console.log(`Error getting Entries for ${contentType.name}.`);
   }
@@ -19,6 +15,7 @@ function HomePage() {
   useEffect(() => {
     async function getPosts() {
       const allPosts = await fetchEntries();
+
       setPosts([...allPosts]);
     }
     getPosts();
@@ -29,6 +26,7 @@ function HomePage() {
       <Head>
         <title>Next.js + Covid</title>
       </Head>
+
       <div
         style={{
           padding: 24,
