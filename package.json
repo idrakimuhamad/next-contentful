@@ -1,5 +1,5 @@
 {
-  "name": "my-nextjs-contentful-project",
+  "name": "next-contentful",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "contentful": "^8.1.7",
     "next": "10.0.5",
     "react": "17.0.1",
     "react-dom": "17.0.1"
