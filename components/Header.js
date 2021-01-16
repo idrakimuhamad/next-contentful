@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
 export default function Header({ client }) {
@@ -26,16 +27,18 @@ export default function Header({ client }) {
   }, []);
 
   return (
-    <div
-      style={{
-        padding: 24,
-      }}>
-      <img
-        src={logo}
-        style={{
-          width: '8rem',
-        }}
-      />
+    <div className="relative bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+          <div className="flex justify-start lg:w-0 lg:flex-1">
+            <Link href="/" passHref>
+              <a>
+                <img src={logo} className="w-16" />
+              </a>
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Post from '../components/post';
-import Header from '../components/Header';
 
 function HomePage({ apiClient }) {
   async function fetchEntries() {
@@ -27,10 +26,7 @@ function HomePage({ apiClient }) {
         <title>Next.js + Covid</title>
       </Head>
 
-      <div
-        style={{
-          padding: 24,
-        }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {posts.length > 0
           ? posts.map((p) => {
               console.log(p);
@@ -42,6 +38,7 @@ function HomePage({ apiClient }) {
                   fullname={p.fields.fullName}
                   address={p.fields.address}
                   status={p.fields.covidStatusFlag}
+                  date={p.sys.createdAt}
                 />
               );
             })

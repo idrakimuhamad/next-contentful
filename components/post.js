@@ -1,36 +1,27 @@
 import Link from 'next/link';
+import { DateTime } from 'luxon';
 
 function Post({ id, date, fullname, address, status }) {
+  const dt = DateTime.fromISO(date);
   return (
-    <div className="container">
-      <Link href={`/patient/${id}`}>
-        <div className="text">
-          <h2>{fullname}</h2>
-          <h4>{address}</h4>
-          <h6>Covid status: {status.toString()}</h6>
+    <Link href={`/patient/${id}`}>
+      <div className="py-8 flex flex-wrap md:flex-nowrap cursor-pointer">
+        <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+          <span className="mt-1 text-gray-500 text-sm">
+            {dt.toLocaleString(DateTime.DATETIME_SHORT)}
+          </span>
         </div>
-      </Link>
-      <style jsx>{`
-        .container {
-          cursor: pointer;
-        }
-        a {
-          border-bottom: none;
-        }
-        a:hover {
-          border-bottom: none;
-        }
-        h2 {
-          font-size: 24px;
-          margin-bottom: 0;
-        }
-        h4 {
-          font-size: 16px;
-          font-weight: 500;
-          margin-top: 8px;
-        }
-      `}</style>
-    </div>
+        <div className="md:flex-grow">
+          <h2 className="text-2xl font-medium text-gray-900 title-font mb-2">
+            {fullname}
+          </h2>
+          <p className="leading-relaxed">{address}</p>
+          <p className="text-indigo-500 inline-flex items-center mt-4">
+            Status: {status ? 'POSITIVE' : 'NEGATIVE'}
+          </p>
+        </div>
+      </div>
+    </Link>
   );
 }
 
