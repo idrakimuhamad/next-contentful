@@ -1,24 +1,24 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import * as contentful from 'contentful';
+// import * as contentful from 'contentful';
 
 import { isRouterReady } from '../../utils';
 import PatientCard from '../../components/PatientCard';
 import Spinner from '../../components/Spinner';
 
-const client = contentful.createClient({
-  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
-  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
-});
+// const client = contentful.createClient({
+//   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+//   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
+// });
 
-function Patient() {
+function Patient({ apiClient }) {
   const [patientRecord, setPatient] = useState(null);
   const [isLoading, setLoading] = useState(true);
   const router = useRouter();
 
   async function getPatient() {
     const { pid } = router.query;
-    const patient = await client.getEntry(pid);
+    const patient = await apiClient.getEntry(pid);
 
     if (patient) {
       return patient;
