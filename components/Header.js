@@ -27,7 +27,7 @@ export default function Header({ client }) {
   }, []);
 
   return (
-    <div className="relative bg-white">
+    <header className="relative bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
@@ -37,8 +37,13 @@ export default function Header({ client }) {
               </a>
             </Link>
           </div>
+          <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <Link href="/generate" passHref>
+              <a className="hover:text-gray-900">Generate</a>
+            </Link>
+          </nav>
         </div>
       </div>
-    </div>
+    </header>
   );
 }
