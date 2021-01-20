@@ -33,7 +33,7 @@ export default function Header({ client }) {
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <Link href="/" passHref>
               <a>
-                <img src={logo} className="w-18" />
+                <img src={logo} className="w-24" />
               </a>
             </Link>
           </div>
