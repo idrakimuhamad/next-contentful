@@ -16,7 +16,7 @@ function Post({ id, date, fullname, address, status }) {
             {fullname}
           </h2>
           <p className="leading-relaxed">{address}</p>
-          <p className="text-indigo-500 inline-flex items-center mt-4">
+          <p className="text-green-700 inline-flex items-center mt-4">
             Status: {status ? 'POSITIVE' : 'NEGATIVE'}
           </p>
         </div>

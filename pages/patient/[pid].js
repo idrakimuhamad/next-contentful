@@ -41,7 +41,7 @@ function Patient({ apiClient }) {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
       {isLoading ? (
-        <Spinner width={48} height={48} color="#6366f1" />
+        <Spinner width={48} height={48} color="#059669" />
       ) : patientRecord ? (
         <PatientCard record={patientRecord} />
       ) : null}

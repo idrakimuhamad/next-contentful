@@ -85,14 +85,14 @@ function HomePage({ apiClient }) {
                   type="text"
                   id="hero-field"
                   name="hero-field"
-                  className="w-full bg-gray-100 rounded border bg-opacity-50 border-gray-300 focus:ring-2 focus:ring-purple-200 focus:bg-transparent focus:border-purple-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  className="w-full bg-gray-100 rounded border bg-opacity-50 border-gray-300 focus:ring-2 focus:ring-green-600 focus:bg-transparent focus:border-green-800 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   onChange={onInput}
                   value={pid}
                   spellCheck={false}
                 />
               </div>
               <button
-                className="inline-flex text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded text-lg"
+                className="inline-flex text-white bg-green-600 border-0 py-2 px-6 focus:outline-none hover:bg-green-800 rounded text-lg"
                 onClick={processQr}>
                 Generate
               </button>
@@ -106,7 +106,7 @@ function HomePage({ apiClient }) {
           </div>
           <div className="flex items-center justify-center lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
             <div className="flex items-center justify-center w-60 h-60">
-              {loading && <Spinner width={24} height={24} color="#6366f1" />}
+              {loading && <Spinner width={24} height={24} color="#059669" />}
               <canvas
                 ref={canvas}
                 className={`object-cover object-center rounded w-60 h-60 ${

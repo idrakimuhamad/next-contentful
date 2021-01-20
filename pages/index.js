@@ -33,7 +33,7 @@ function HomePage({ apiClient }) {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {isLoading ? (
-          <Spinner width={48} height={48} color="#6366f1" />
+          <Spinner width={48} height={48} color="#059669" />
         ) : posts.length > 0 ? (
           posts.map((p) => {
             console.log(p);

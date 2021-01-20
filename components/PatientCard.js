@@ -78,7 +78,7 @@ export default function PatientCard({ record }) {
                   <div className="ml-4 flex-shrink-0">
                     <a
                       href="#"
-                      className="font-medium text-indigo-600 hover:text-indigo-500">
+                      className="font-medium text-green-700 hover:text-green-900">
                       Download
                     </a>
                   </div>
