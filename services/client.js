@@ -3,4 +3,8 @@ const client = require('contentful').createClient({
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
 });
 
-export default client;
+const writeClient = require('contentful-management').createClient({
+  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_PERSONAL_ACCESS_TOKEN,
+});
+
+export { client, writeClient };

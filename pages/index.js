@@ -5,7 +5,9 @@ import Spinner from '../components/Spinner';
 
 function HomePage({ apiClient }) {
   async function fetchEntries() {
-    const entries = await apiClient.getEntries();
+    const entries = await apiClient.getEntries({
+      content_type: 'patient',
+    });
     if (entries.items) return entries.items;
     console.log(`Error getting Entries for ${contentType.name}.`);
   }

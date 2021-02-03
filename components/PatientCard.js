@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import QRious from 'qrious';
+import Link from 'next/link';
 
-export default function PatientCard({ record }) {
+export default function PatientCard({ pid, record }) {
   const canvas = useRef(null);
 
   function generateQr() {
@@ -84,6 +85,28 @@ export default function PatientCard({ record }) {
                   </div>
                 </li>
               </ul>
+            </dd>
+          </div>
+          <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt className="text-sm font-medium text-gray-500">
+              Self-declaration
+            </dt>
+            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              {!!record?.selfDeclaration?.sys?.id ? (
+                <Link
+                  href={`/patient/self-declaration/view/${record?.selfDeclaration?.sys?.id}`}
+                  passHref>
+                  <a className="text-green-700 hover:text-gray-900 px-2">
+                    View the Submission
+                  </a>
+                </Link>
+              ) : (
+                <Link href={`/patient/self-declaration/${pid}`} passHref>
+                  <a className="text-green-700 hover:text-gray-900 px-2">
+                    Go to Submission
+                  </a>
+                </Link>
+              )}
             </dd>
           </div>
         </dl>

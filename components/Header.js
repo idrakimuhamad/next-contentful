@@ -39,7 +39,7 @@ export default function Header({ client }) {
           </div>
           <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
             <Link href="/generate" passHref>
-              <a className="hover:text-gray-900">Generate</a>
+              <a className="hover:text-gray-900 px-2">Generate</a>
             </Link>
           </nav>
         </div>

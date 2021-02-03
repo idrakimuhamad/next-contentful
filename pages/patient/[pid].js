@@ -15,9 +15,9 @@ function Patient({ apiClient }) {
   const [patientRecord, setPatient] = useState(null);
   const [isLoading, setLoading] = useState(true);
   const router = useRouter();
+  const { pid } = router.query;
 
   async function getPatient() {
-    const { pid } = router.query;
     const patient = await apiClient.getEntry(pid);
 
     if (patient) {
@@ -43,7 +43,7 @@ function Patient({ apiClient }) {
       {isLoading ? (
         <Spinner width={48} height={48} color="#059669" />
       ) : patientRecord ? (
-        <PatientCard record={patientRecord} />
+        <PatientCard pid={pid} record={patientRecord} />
       ) : null}
     </div>
   );
